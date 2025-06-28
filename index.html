@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CleanSwipe™ - Limpiador 2 en 1</title>
+  <title>Tienda - CleanSwipe™</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,54 +12,115 @@
       padding: 0;
     }
     .container {
-      max-width: 800px;
+      max-width: 1100px;
       margin: auto;
       padding: 20px;
-      text-align: center;
     }
     h1 {
+      text-align: center;
       color: #1d3557;
     }
-    .product-image {
-      width: 100%;
-      max-width: 600px;
-      border-radius: 10px;
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .product-card {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
-    .features {
-      text-align: left;
-      margin-top: 20px;
+    .product-card img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      margin-bottom: 15px;
     }
-    .features li {
-      margin-bottom: 10px;
-    }
-    .buy-button, .whatsapp-button {
+    .buy-button {
       display: inline-block;
       background-color: #457b9d;
       color: white;
-      padding: 12px 24px;
+      padding: 10px 20px;
       border: none;
       border-radius: 8px;
-      font-size: 18px;
+      font-size: 16px;
       cursor: pointer;
       text-decoration: none;
-      margin-top: 20px;
+      margin-top: 10px;
     }
-    .buy-button:hover, .whatsapp-button:hover {
+    .buy-button:hover {
       background-color: #365f7a;
     }
-    .guarantee {
-      margin-top: 20px;
-      color: #2a2a2a;
-      font-style: italic;
-    }
     .about {
-      margin-top: 40px;
-      text-align: left;
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid #ccc;
     }
     .about h2 {
       color: #1d3557;
     }
+    .about p {
+      color: #333;
+    }
+    .whatsapp-button {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #25d366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🛍️ Nuestra tienda</h1>
+
+    <div class="product-grid">
+      <!-- Producto 1: CleanSwipe -->
+      <div class="product-card">
+        <img src="cleanswipe.png" alt="CleanSwipe™" />
+        <h2>CleanSwipe™</h2>
+        <p>Tu pantalla como nueva. Compacto, reutilizable y sin rayones.</p>
+        <a class="buy-button" href="https://payhip.com/b/UKlkB" target="_blank">Comprar por $8.99</a>
+      </div>
+
+      <!-- Producto 2: ScreenGuard -->
+      <div class="product-card">
+        <img src="screenguard.png" alt="ScreenGuard™" />
+        <h2>✨ ScreenGuard – Protección total para tu pantalla</h2>
+        <p>
+          🛡️ Protector de pantalla ultra resistente con cristal templado 9H para cuidar tu dispositivo de golpes y rayones. ¡Disfruta de una visión clara y un tacto suave sin perder sensibilidad!<br><br>
+          Ideal para:<br>
+          📱 Smartphones<br>
+          💻 Tablets y laptops<br>
+          ⌚ Dispositivos con pantalla táctil<br><br>
+          ✔️ Alta definición y transparencia<br>
+          ✔️ Revestimiento anti-huellas<br>
+          ✔️ Fácil instalación sin burbujas<br>
+          ✔️ Diseño ultradelgado y resistente<br><br>
+          📦 Envío rápido y seguro<br>
+          💰 Garantía de satisfacción o reembolso
+        </p>
+        <a class="buy-button" href="https://payhip.com/b/GXwZl" target="_blank">Comprar por $12.99</a>
+      </div>
+    </div>
+
+    <div class="about">
+      <h2>¿Quiénes somos?</h2>
+      <p>Somos una pequeña tienda comprometida con la calidad y utilidad. Nuestros productos están pensados para hacer tu vida más práctica.</p>
+      <p>¿Tienes dudas o preguntas? Contáctanos directamente:</p>
+      <a class="whatsapp-button" href="https://wa.me/34123456789?text=Hola%2C%20quiero%20más%20información%20sobre%20los%20productos." target="_blank">💬 Escribir por WhatsApp</a>
+    </div>
+  </div>
+</body>
+</html>
+
     .about p {
       color: #333;
     }
