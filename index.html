@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tienda - CleanSwipe™ & Mini Proyector</title>
   <style>
     body {
@@ -76,7 +76,7 @@
       font-size: 16px;
     }
 
-    /* Estilo para la sección de comentarios */
+    /* Comentarios dinámicos */
     .testimonials {
       margin-top: 60px;
       padding-top: 30px;
@@ -99,6 +99,7 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       color: #333;
       font-size: 15px;
+      word-wrap: break-word;
     }
     .testimonial p {
       margin: 0 0 10px 0;
@@ -106,6 +107,118 @@
     .testimonial span {
       font-weight: 600;
       color: #1d3557;
+    }
+    /* Formulario contacto */
+    .contact-section {
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid #ccc;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contact-section h2 {
+      text-align: center;
+      color: #1d3557;
+      margin-bottom: 15px;
+    }
+    .contact-form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: 600;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      resize: vertical;
+    }
+    .contact-form button {
+      margin-top: 15px;
+      background-color: #457b9d;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .contact-form button:hover {
+      background-color: #365f7a;
+    }
+    .contact-message {
+      margin-top: 10px;
+      color: green;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Chat en vivo */
+    #chat-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+    #chat-box {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 300px;
+      max-height: 400px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 1000;
+    }
+    #chat-header {
+      background-color: #25d366;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+    #chat-messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+    #chat-input {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+    #chat-input input {
+      flex: 1;
+      border: none;
+      padding: 10px;
+      font-size: 14px;
+      outline: none;
+    }
+    #chat-input button {
+      background-color: #25d366;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    #chat-input button:hover {
+      background-color: #1ebe56;
     }
   </style>
 </head>
@@ -153,27 +266,36 @@
       </div>
     </div>
 
-    <!-- Sección de comentarios -->
+    <!-- Sección comentarios dinámicos -->
     <section class="testimonials">
       <h2>💬 Opiniones de nuestros clientes</h2>
-      <div class="testimonial-list">
-        <div class="testimonial">
-          <p>"El CleanSwipe me salvó la pantalla, lo uso a diario."</p>
-          <span>– Marta G.</span>
-        </div>
-        <div class="testimonial">
-          <p>"Muy buena calidad el mini proyector, lo recomiendo 100%."</p>
-          <span>– Juan R.</span>
-        </div>
-        <div class="testimonial">
-          <p>"Recibí mi pedido en solo 3 días, excelente atención."</p>
-          <span>– Laura T.</span>
-        </div>
-        <div class="testimonial">
-          <p>"Me encantó el diseño compacto, súper útil para el trabajo."</p>
-          <span>– Carlos V.</span>
-        </div>
+      <div class="testimonial-list" id="testimonial-list">
+        <!-- Opiniones predeterminadas -->
+        <div class="testimonial"><p>"El CleanSwipe me salvó la pantalla, lo uso a diario."</p><span>– Marta G.</span></div>
+        <div class="testimonial"><p>"Muy buena calidad el mini proyector, lo recomiendo 100%."</p><span>– Juan R.</span></div>
       </div>
+      <form id="testimonial-form" style="margin-top:20px; max-width:400px; margin-left:auto; margin-right:auto;">
+        <label for="testimonial-text">Añadir opinión:</label>
+        <textarea id="testimonial-text" rows="3" required placeholder="Escribe tu opinión aquí"></textarea>
+        <label for="testimonial-name">Tu nombre:</label>
+        <input id="testimonial-name" type="text" required placeholder="Tu nombre" />
+        <button type="submit">Enviar opinión</button>
+      </form>
+    </section>
+
+    <!-- Formulario de contacto -->
+    <section class="contact-section">
+      <h2>📩 Contáctanos</h2>
+      <form id="contact-form" class="contact-form" novalidate>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" required placeholder="Tu nombre" />
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" required placeholder="tu@email.com" />
+        <label for="message">Mensaje:</label>
+        <textarea id="message" rows="4" required placeholder="Escribe tu mensaje aquí"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <div class="contact-message" id="contact-message"></div>
     </section>
 
     <div class="about">
@@ -183,7 +305,126 @@
       <a class="whatsapp-button" href="https://wa.me/34123456789?text=Hola%2C%20quiero%20más%20información%20sobre%20los%20productos." target="_blank">💬 Escribir por WhatsApp</a>
     </div>
   </div>
+
+  <!-- Botón y caja chat -->
+  <button id="chat-toggle" title="Abrir chat">💬</button>
+  <div id="chat-box" role="dialog" aria-live="polite" aria-label="Chat en vivo">
+    <div id="chat-header">Chat en vivo</div>
+    <div id="chat-messages"></div>
+    <div id="chat-input">
+      <input type="text" id="chat-text" placeholder="Escribe un mensaje..." aria-label="Escribe un mensaje" />
+      <button id="chat-send">Enviar</button>
+    </div>
+  </div>
+
+  <script>
+    // Comentarios dinámicos: guardar en localStorage para simular backend
+    const testimonialForm = document.getElementById('testimonial-form');
+    const testimonialList = document.getElementById('testimonial-list');
+
+    function loadTestimonials() {
+      const stored = localStorage.getItem('testimonials');
+      if (stored) {
+        const arr = JSON.parse(stored);
+        testimonialList.innerHTML = '';
+        arr.forEach(t => {
+          const div = document.createElement('div');
+          div.classList.add('testimonial');
+          div.innerHTML = '<p>"' + escapeHTML(t.text) + '"</p><span>– ' + escapeHTML(t.name) + '</span>';
+          testimonialList.appendChild(div);
+        });
+      }
+    }
+    function saveTestimonials(arr) {
+      localStorage.setItem('testimonials', JSON.stringify(arr));
+    }
+    testimonialForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const text = testimonialForm.querySelector('#testimonial-text').value.trim();
+      const name = testimonialForm.querySelector('#testimonial-name').value.trim();
+      if (!text || !name) return;
+      const stored = localStorage.getItem('testimonials');
+      const arr = stored ? JSON.parse(stored) : [];
+      arr.push({text, name});
+      saveTestimonials(arr);
+      loadTestimonials();
+      testimonialForm.reset();
+      alert('¡Gracias por tu opinión!');
+    });
+    loadTestimonials();
+
+    // Escape para evitar inyección simple de HTML
+    function escapeHTML(str) {
+      return str.replace(/[&<>"']/g, function(m) {
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];
+      });
+    }
+
+    // Formulario de contacto (simulado, sin backend)
+    const contactForm = document.getElementById('contact-form');
+    const contactMessage = document.getElementById('contact-message');
+
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = contactForm.querySelector('#name').value.trim();
+      const email = contactForm.querySelector('#email').value.trim();
+      const message = contactForm.querySelector('#message').value.trim();
+      if (!name || !email || !message) {
+        contactMessage.style.color = 'red';
+        contactMessage.textContent = 'Por favor, rellena todos los campos.';
+        return;
+      }
+      // Aquí podrías integrar con backend o enviar email
+      contactMessage.style.color = 'green';
+      contactMessage.textContent = 'Mensaje enviado, te responderemos pronto.';
+      contactForm.reset();
+    });
+
+    // Chat en vivo básico (solo local)
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatBox = document.getElementById('chat-box');
+    const chatMessages = document.getElementById('chat-messages');
+    const chatInput = document.getElementById('chat-text');
+    const chatSend = document.getElementById('chat-send');
+
+    chatToggle.addEventListener('click', () => {
+      if (chatBox.style.display === 'flex') {
+        chatBox.style.display = 'none';
+      } else {
+        chatBox.style.display = 'flex';
+        chatInput.focus();
+      }
+    });
+
+    chatSend.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keypress', e => {
+      if (e.key === 'Enter') sendMessage();
+    });
+
+    function sendMessage() {
+      const text = chatInput.value.trim();
+      if (!text) return;
+      const msgUser = document.createElement('div');
+      msgUser.style.textAlign = 'right';
+      msgUser.style.marginBottom = '8px';
+      msgUser.textContent = 'Tú: ' + text;
+      chatMessages.appendChild(msgUser);
+      chatInput.value = '';
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      // Simula respuesta automática
+      setTimeout(() => {
+        const msgBot = document.createElement('div');
+        msgBot.style.textAlign = 'left';
+        msgBot.style.marginBottom = '8px';
+        msgBot.textContent = 'Soporte: Gracias por contactarnos. Te responderemos pronto.';
+        chatMessages.appendChild(msgBot);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }, 1500);
+    }
+  </script>
 </body>
 </html>
+
 
 
