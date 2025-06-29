@@ -3,13 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tienda - CleanSwipe™ & Mini Proyector</title>
+  <title>SmartGadgets™ - Tienda de accesorios prácticos</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Tienda online de gadgets útiles como CleanSwipe y mini proyectores portátiles. Envío gratuito y satisfacción garantizada.">
+  <meta name="keywords" content="limpiador de pantallas, mini proyector, gadgets útiles, tienda online, tecnología portátil">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       background-color: #f2f6fc;
       margin: 0;
       padding: 0;
+    }
+    header {
+      background-color: #1d3557;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
+    header h1 {
+      margin: 0;
+    }
+    header p {
+      margin: 5px 0 0;
     }
     .container {
       max-width: 1100px;
@@ -32,6 +48,11 @@
       padding: 20px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
     }
     .product-card img {
       width: 100%;
@@ -65,9 +86,20 @@
     .about p {
       color: #333;
     }
-    .whatsapp-button {
-      display: inline-block;
-      margin-top: 15px;
+    .testimonials {
+      margin-top: 50px;
+      padding: 30px;
+      background-color: #e6ecf8;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .testimonials blockquote {
+      font-style: italic;
+      color: #333;
+      margin: 15px 0;
+    }
+    .whatsapp-button,
+    .whatsapp-float {
       background-color: #25d366;
       color: white;
       padding: 10px 20px;
@@ -75,9 +107,30 @@
       text-decoration: none;
       font-size: 16px;
     }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 28px;
+      padding: 15px 18px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px;
+      color: #888;
+    }
   </style>
 </head>
 <body>
+  <header>
+    <h1>✨ Bienvenido a SmartGadgets™</h1>
+    <p>Productos útiles, prácticos y con estilo</p>
+  </header>
+
   <div class="container">
     <h1>🛍️ Nuestra tienda</h1>
 
@@ -121,6 +174,12 @@
       </div>
     </div>
 
+    <div class="testimonials">
+      <h2>Opiniones de nuestros clientes</h2>
+      <blockquote>"El CleanSwipe me salvó la pantalla, lo uso a diario" - Marta G.</blockquote>
+      <blockquote>"Muy buena calidad el mini proyector, lo recomiendo 100%" - Juan R.</blockquote>
+    </div>
+
     <div class="about">
       <h2>¿Quiénes somos?</h2>
       <p>Somos una pequeña tienda comprometida con la calidad y utilidad. Nuestros productos están pensados para hacer tu vida más práctica.</p>
@@ -128,5 +187,12 @@
       <a class="whatsapp-button" href="https://wa.me/34123456789?text=Hola%2C%20quiero%20más%20información%20sobre%20los%20productos." target="_blank">💬 Escribir por WhatsApp</a>
     </div>
   </div>
+
+  <a class="whatsapp-float" href="https://wa.me/34123456789?text=Hola%2C%20quiero%20más%20información%20sobre%20los%20productos." target="_blank">💬</a>
+
+  <footer>
+    © 2025 SmartGadgets™ - Todos los derechos reservados
+  </footer>
 </body>
 </html>
+
