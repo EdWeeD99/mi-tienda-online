@@ -27,7 +27,7 @@
       max-width: 1100px;
       margin: auto;
       padding: 20px;
-      padding-top: 30px; /* espacio extra debajo del header */
+      padding-top: 30px;
     }
     h1 {
       text-align: center;
@@ -331,7 +331,7 @@
 </div>
 
 <script>
-  // Comentarios dinámicos: guardar en localStorage para simular backend
+  // Manejo de testimonios guardados en localStorage
   const testimonialForm = document.getElementById('testimonial-form');
   const testimonialList = document.getElementById('testimonial-list');
 
@@ -361,13 +361,13 @@
     const stored = localStorage.getItem('testimonials');
     let arr = stored ? JSON.parse(stored) : [];
     arr.unshift({name, text});
-    if(arr.length > 20) arr.pop(); // máximo 20 comentarios
+    if(arr.length > 20) arr.pop();
     saveTestimonials(arr);
     testimonialForm.reset();
     loadTestimonials();
   });
 
-  // escape HTML para evitar inyección
+  // Escapar HTML para evitar inyección
   function escapeHTML(text) {
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(text));
@@ -386,36 +386,51 @@
   chatToggle.addEventListener('click', () => {
     if (chatBox.style.display === 'flex') {
       chatBox.style.display = 'none';
+      chatToggle.setAttribute('aria-label', 'Abrir chat en vivo');
     } else {
       chatBox.style.display = 'flex';
       chatMessages.focus();
+      chatToggle.setAttribute('aria-label', 'Cerrar chat en vivo');
     }
   });
 
-  chatSend.addEventListener('click', sendMessage);
-  chatText.addEventListener('keydown', e => {
-    if (e.key === 'Enter') sendMessage();
-  });
-
-  function sendMessage() {
-    const msg = chatText.value.trim();
-    if (!msg) return;
-    appendMessage('Tú', msg);
-    chatText.value = '';
-
-    // Respuesta automática sencilla
-    setTimeout(() => {
-      appendMessage('Soporte', 'Gracias por tu mensaje. Te responderemos pronto.');
-    }, 1000);
-  }
-
-  function appendMessage(who, text) {
-    const msgDiv = document.createElement('div');
-    msgDiv.style.marginBottom = '8px';
-    msgDiv.innerHTML = `<strong>${escapeHTML(who)}:</strong> ${escapeHTML(text)}`;
-    chatMessages.appendChild(msgDiv);
+  function addMessage(text, from = 'user') {
+    const p = document.createElement('p');
+    p.textContent = text;
+    p.style.padding = '5px';
+    p.style.margin = '5px 0';
+    p.style.borderRadius = '8px';
+    p.style.maxWidth = '80%';
+    p.style.clear = 'both';
+    if (from === 'user') {
+      p.style.backgroundColor = '#d1f0d1';
+      p.style.alignSelf = 'flex-end';
+      p.style.float = 'right';
+    } else {
+      p.style.backgroundColor = '#e1e1e1';
+      p.style.alignSelf = 'flex-start';
+      p.style.float = 'left';
+    }
+    chatMessages.appendChild(p);
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
+
+  chatSend.addEventListener('click', () => {
+    const msg = chatText.value.trim();
+    if (!msg) return;
+    addMessage(msg, 'user');
+    chatText.value = '';
+    setTimeout(() => {
+      addMessage('Gracias por tu mensaje. Te responderemos pronto.', 'bot');
+    }, 1000);
+  });
+
+  chatText.addEventListener('keypress', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      chatSend.click();
+    }
+  });
 </script>
 
 </body>
