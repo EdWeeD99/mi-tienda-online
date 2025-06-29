@@ -88,7 +88,7 @@
       text-decoration: none;
       font-size: 16px;
     }
-    /* Sección de testimonios */
+    /* Testimonios */
     #testimonials-section {
       margin-top: 50px;
       background: #fff;
@@ -149,7 +149,6 @@
     #testimonial-form button:hover {
       background-color: #365f7a;
     }
-    /* Pie de página */
     footer {
       background:#f1f1f1; 
       padding:20px; 
@@ -165,8 +164,6 @@
       width: 32px;
       height: 32px;
     }
-
-    /* Chat en vivo */
     #chat-toggle {
       position: fixed;
       bottom: 20px;
@@ -250,53 +247,36 @@
   <h1>🛍️ Nuestra tienda</h1>
 
   <div class="product-grid">
-    <!-- Producto 1: CleanSwipe -->
     <div class="product-card">
       <img src="cleanswipe.png" alt="CleanSwipe™" />
       <h2>✨ CleanSwipe™ – Tu pantalla como nueva</h2>
       <p>
-        🧽 El limpiador 2 en 1 más práctico y portátil. ¡Incluye spray recargable y paño integrado! Ideal para:<br><br>
-        Teléfonos y tablets<br>
-        Laptops y monitores<br>
-        Lentes y cámaras<br><br>
-        ✔️ No raya<br>
-        ✔️ Reutilizable<br>
-        ✔️ Súper compacto<br><br>
-        📦 Envío gratuito incluido<br>
-        💰 Satisfacción garantizada o reembolso 
+        🧽 Limpiador 2 en 1 con spray y paño integrado.<br><br>
+        ✔️ Reutilizable<br>✔️ Compacto<br>✔️ No raya<br><br>
+        📦 Envío gratuito<br>💰 Reembolso garantizado
       </p>
-      <a class="buy-button" href="https://payhip.com/b/UKlkB" target="_blank" rel="noopener noreferrer">Comprar por $8.99</a>
+      <a class="buy-button" href="https://payhip.com/b/UKlkB" target="_blank">Comprar por $8.99</a>
     </div>
 
-    <!-- Producto 2: Mini Proyector portátil LED -->
     <div class="product-card">
-      <img src="mini-proyector.jpg" alt="Mini Proyector portátil LED" />
+      <img src="mini-proyector.jpg" alt="Mini Proyector" />
       <h2>✨ Mini Proyector portátil LED</h2>
       <p>
-        🎥 Disfruta de tu cine en casa en cualquier lugar. Este mini proyector compacto y portátil ofrece imágenes nítidas y brillantes para ver películas, jugar videojuegos o proyectar presentaciones.<br><br>
-        Ideal para:<br>
-        🏠 Hogar y entretenimiento<br>
-        🎮 Juegos y eventos sociales<br>
-        💼 Presentaciones y trabajo remoto<br><br>
-        ✔️ Resolución HD<br>
-        ✔️ Fácil conexión vía HDMI/USB/TF<br>
-        ✔️ Batería integrada para uso sin cables<br>
-        ✔️ Diseño ligero y compacto<br><br>
-        📦 Envío rápido y seguro<br>
-        💰 Garantía de satisfacción o reembolso
+        🎥 Cine portátil HD para casa y oficina.<br><br>
+        ✔️ HDMI / USB / TF<br>✔️ Ligero y recargable<br><br>
+        📦 Envío rápido<br>💰 Garantía de satisfacción
       </p>
-      <a class="buy-button" href="https://payhip.com/b/wYcd3" target="_blank" rel="noopener noreferrer">Comprar por $29.99</a>
+      <a class="buy-button" href="https://payhip.com/b/wYcd3" target="_blank">Comprar por $29.99</a>
     </div>
   </div>
 
-  <!-- Sección testimonios -->
-  <section id="testimonials-section" aria-label="Opiniones de clientes">
+  <section id="testimonials-section">
     <h2>Opiniones de nuestros clientes</h2>
-    <div id="testimonial-list" tabindex="0" aria-live="polite" aria-atomic="true"></div>
-    <form id="testimonial-form" aria-label="Formulario para añadir opinión">
-      <input type="text" id="testimonial-name" placeholder="Tu nombre" aria-required="true" required />
+    <div id="testimonial-list"></div>
+    <form id="testimonial-form">
+      <input type="text" id="testimonial-name" placeholder="Tu nombre" required />
       <br />
-      <textarea id="testimonial-text" rows="3" placeholder="Tu opinión" aria-required="true" required></textarea>
+      <textarea id="testimonial-text" rows="3" placeholder="Tu opinión" required></textarea>
       <br />
       <button type="submit">Enviar opinión</button>
     </form>
@@ -304,34 +284,36 @@
 
   <div class="about">
     <h2>¿Quiénes somos?</h2>
-    <p>Somos una pequeña tienda comprometida con la calidad y utilidad. Nuestros productos están pensados para hacer tu vida más práctica.</p>
-    <p>¿Tienes dudas o preguntas? Contáctanos directamente:</p>
-    <a class="whatsapp-button" href="https://wa.me/34123456789?text=Hola%2C%20quiero%20más%20información%20sobre%20los%20productos." target="_blank" rel="noopener noreferrer">💬 Escribir por WhatsApp</a>
+    <p>Somos una tienda online que ofrece productos prácticos y garantizados.</p>
+    <p>Contáctanos directamente por WhatsApp:</p>
+    <a class="whatsapp-button" href="https://wa.me/34642699620" target="_blank">💬 Escribir por WhatsApp</a>
   </div>
 </div>
 
 <footer>
   <p>© 2025 Tienda Online. Todos los derechos reservados.</p>
   <div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/SSL_icon.svg/32px-SSL_icon.svg.png" alt="SSL Seguro" title="Conexión segura SSL" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Verified_Badge.svg/32px-Verified_Badge.svg.png" alt="Pago Seguro" title="Pago seguro garantizado" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Check_mark_23x20_02.svg/32px-Check_mark_23x20_02.svg.png" alt="Satisfacción Garantizada" title="Garantía de satisfacción" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/SSL_icon.svg/32px-SSL_icon.svg.png" alt="SSL Seguro" title="Conexión segura" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Verified_Badge.svg/32px-Verified_Badge.svg.png" alt="Verificado" title="Pago verificado" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Check_mark_23x20_02.svg/32px-Check_mark_23x20_02.svg.png" alt="Satisfacción Garantizada" title="Satisfacción garantizada" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" title="Pagos con PayPal" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" title="Pagos con Visa" />
   </div>
 </footer>
 
-<!-- Botón y caja chat -->
-<button id="chat-toggle" title="Abrir chat" aria-label="Abrir chat en vivo">💬</button>
-<div id="chat-box" role="dialog" aria-live="polite" aria-label="Chat en vivo">
+<!-- Botón y caja de chat -->
+<button id="chat-toggle" title="Abrir chat">💬</button>
+<div id="chat-box">
   <div id="chat-header">Chat en vivo</div>
-  <div id="chat-messages" tabindex="0"></div>
+  <div id="chat-messages"></div>
   <div id="chat-input">
-    <input type="text" id="chat-text" placeholder="Escribe un mensaje..." aria-label="Escribe un mensaje" />
-    <button id="chat-send" aria-label="Enviar mensaje">Enviar</button>
+    <input type="text" id="chat-text" placeholder="Escribe un mensaje..." />
+    <button id="chat-send">Enviar</button>
   </div>
 </div>
 
 <script>
-  // Manejo de testimonios guardados en localStorage
+  // Testimonios
   const testimonialForm = document.getElementById('testimonial-form');
   const testimonialList = document.getElementById('testimonial-list');
 
@@ -347,7 +329,7 @@
         testimonialList.appendChild(div);
       });
     } else {
-      testimonialList.innerHTML = '<p style="text-align:center; color:#777;">No hay opiniones aún. ¡Sé el primero en dejar una!</p>';
+      testimonialList.innerHTML = '<p style="text-align:center; color:#777;">No hay opiniones aún. ¡Sé el primero!</p>';
     }
   }
   function saveTestimonials(arr) {
@@ -358,25 +340,22 @@
     const text = testimonialForm.querySelector('#testimonial-text').value.trim();
     const name = testimonialForm.querySelector('#testimonial-name').value.trim();
     if (!text || !name) return alert('Por favor, completa ambos campos.');
-    const stored = localStorage.getItem('testimonials');
-    let arr = stored ? JSON.parse(stored) : [];
-    arr.unshift({name, text});
-    if(arr.length > 20) arr.pop();
+    let arr = localStorage.getItem('testimonials');
+    arr = arr ? JSON.parse(arr) : [];
+    arr.unshift({ name, text });
+    if (arr.length > 20) arr.pop();
     saveTestimonials(arr);
     testimonialForm.reset();
     loadTestimonials();
   });
-
-  // Escapar HTML para evitar inyección
   function escapeHTML(text) {
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(text));
     return div.innerHTML;
   }
-
   loadTestimonials();
 
-  // Chat básico en vivo
+  // Chat básico
   const chatToggle = document.getElementById('chat-toggle');
   const chatBox = document.getElementById('chat-box');
   const chatMessages = document.getElementById('chat-messages');
@@ -384,53 +363,27 @@
   const chatSend = document.getElementById('chat-send');
 
   chatToggle.addEventListener('click', () => {
-    if (chatBox.style.display === 'flex') {
-      chatBox.style.display = 'none';
-      chatToggle.setAttribute('aria-label', 'Abrir chat en vivo');
-    } else {
-      chatBox.style.display = 'flex';
-      chatMessages.focus();
-      chatToggle.setAttribute('aria-label', 'Cerrar chat en vivo');
-    }
+    chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
   });
-
-  function addMessage(text, from = 'user') {
-    const p = document.createElement('p');
-    p.textContent = text;
-    p.style.padding = '5px';
-    p.style.margin = '5px 0';
-    p.style.borderRadius = '8px';
-    p.style.maxWidth = '80%';
-    p.style.clear = 'both';
-    if (from === 'user') {
-      p.style.backgroundColor = '#d1f0d1';
-      p.style.alignSelf = 'flex-end';
-      p.style.float = 'right';
-    } else {
-      p.style.backgroundColor = '#e1e1e1';
-      p.style.alignSelf = 'flex-start';
-      p.style.float = 'left';
-    }
-    chatMessages.appendChild(p);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }
-
-  chatSend.addEventListener('click', () => {
+  chatSend.addEventListener('click', sendMessage);
+  chatText.addEventListener('keydown', e => {
+    if (e.key === 'Enter') sendMessage();
+  });
+  function sendMessage() {
     const msg = chatText.value.trim();
     if (!msg) return;
-    addMessage(msg, 'user');
+    appendMessage('Tú', msg);
     chatText.value = '';
     setTimeout(() => {
-      addMessage('Gracias por tu mensaje. Te responderemos pronto.', 'bot');
+      appendMessage('Soporte', 'Gracias por tu mensaje. Te responderemos pronto.');
     }, 1000);
-  });
-
-  chatText.addEventListener('keypress', e => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      chatSend.click();
-    }
-  });
+  }
+  function appendMessage(who, text) {
+    const msgDiv = document.createElement('div');
+    msgDiv.innerHTML = `<strong>${escapeHTML(who)}:</strong> ${escapeHTML(text)}`;
+    chatMessages.appendChild(msgDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
 </script>
 
 </body>
