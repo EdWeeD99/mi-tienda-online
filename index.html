@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -236,6 +236,145 @@
       background: #365f7a;
     }
   </style>
+ <style>
+  .producto-container {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+      #carrusel {
+      position: relative;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto 20px auto;
+      overflow: hidden;
+      border-radius: 15px;
+    }
+    #carrusel-imagenes {
+      display: flex;
+      width: calc(300px * 8); /* 8 imágenes */
+      transition: transform 0.5s ease-in-out;
+    }
+    #carrusel-imagenes img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      flex-shrink: 0;
+    }
+    .carrusel-boton {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 50%;
+      user-select: none;
+    }
+    #anterior {
+      left: 10px;
+    }
+    #siguiente {
+      right: 10px;
+    }
+  </style>
+  <style>
+    .descripcion ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    .precio {
+      font-size: 1.8rem;
+      color: #27ae60;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    .boton-comprar {
+      margin-top: 1rem;
+      background-color: #6c63ff;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .boton-comprar:hover {
+      background-color: #574fd6;
+    }
+   .carrusel {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 20px auto;
+  overflow: hidden;
+  border-radius: 15px;
+}
+.carrusel-imagenes {
+  display: flex;
+  width: max-content;
+  transition: transform 0.5s ease-in-out;
+}
+.carrusel-imagenes img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  flex-shrink: 0;
+}
+.anterior, .siguiente {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+  user-select: none;
+}
+.anterior {
+  left: 10px;
+}
+.siguiente {
+  right: 10px;
+}
+.stars {
+  font-size: 20px;
+  color: gold;
+  margin: 5px 0;
+}
+   .stock {
+  font-size: 14px;
+  color: #1d3557;
+  font-weight: bold;
+}
+.stock.low {
+  color: #e63946;
+}
+
+
+  </style>
+
 </head>
 <body>
 
@@ -246,29 +385,84 @@
 <div class="container">
   <h1>🛍️ Nuestra tienda</h1>
 
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="cleanswipe.png" alt="CleanSwipe™" />
-      <h2>✨ CleanSwipe™ – Tu pantalla como nueva</h2>
-      <p>
-        🧽 Limpiador 2 en 1 con spray y paño integrado.<br><br>
-        ✔️ Reutilizable<br>✔️ Compacto<br>✔️ No raya<br><br>
-        📦 Envío gratuito<br>💰 Reembolso garantizado
-      </p>
-      <a class="buy-button" href="https://payhip.com/b/UKlkB" target="_blank">Comprar por $8.99</a>
+ <div class="product-grid">
+  <div class="product-card">
+  <div class="carrusel" data-carrusel>
+    <div class="carrusel-imagenes">
+     <img src="limpia1.jpg" alt="Producto 1 Imagen 1" />
+     <img src="limpia2.jpg" alt="Producto 1 Imagen 2" />
+     <img src="limpia3.jpg" alt="Producto 1 Imagen 3" />
+     <img src="limpia4.jpg" alt="Producto 1 Imagen 4" />
+     <img src="limpia5.jpg" alt="Producto 1 Imagen 5" />
+     <img src="limpia6.jpg" alt="Producto 1 Imagen 6" />
     </div>
+    <div style="text-align:center; margin-top:10px;">
+      <button class="anterior">Anterior</button>
+      <button class="siguiente">Siguiente</button>
+    </div>
+  </div>
 
-    <div class="product-card">
-      <img src="anillo de luz led.jpg" alt="anillo de luz led" />
+  <h2>🧽 CleanSwipe™ – Edición especial</h2>
+  <p>
+    ✔️ Más compacto<br>✔️ Recargable<br><br>
+    📦 Envío gratis<br>💰 100% Garantía
+  </p>
+   <div class="stars" data-rating="4">★★★★☆</div>
+<div class="stock" data-stock="4"><span class="stock-text"></span></div>
+
+  <a class="buy-button" href="https://payhip.com/b/UKlkB" target="_blank">Comprar por $8.99</a>
+  </div>
+     <div class="product-card">
+  <div class="carrusel" data-carrusel>
+    <div class="carrusel-imagenes">
+      <img src="anillo1.jpg" alt="Producto 1 Imagen 1" />
+      <img src="anillo2.jpg" alt="Producto 1 Imagen 2" />
+      <img src="anillo3.jpg" alt="Producto 1 Imagen 3" />
+      <img src="anillo4.jpg" alt="Producto 1 Imagen 4" /> 
+    </div>
+    <div style="text-align:center; margin-top:10px;">
+      <button class="anterior">Anterior</button>
+      <button class="siguiente">Siguiente</button>
+    </div>
+  </div>
       <h2>✨Anillo de Luz LED portátil </h2>
       <p>
         ✔️ HDMI / USB / TF<br>✔️ Ligero y recargable<br><br>
         📦 Envío rápido<br>💰 Garantía de satisfacción
       </p>
+      <div class="stars" data-rating="4">★★★★☆</div>
+<div class="stock" data-stock="7"><span class="stock-text"></span></div>
+
       <a class="buy-button" href="https://payhip.com/b/wYcd3" target="_blank">Comprar por $29.99</a>
     </div>
+    <div class="product-card">
+  <div class="carrusel" data-carrusel>
+    <div class="carrusel-imagenes">
+    <img src="lampara1.jpg" alt="Lámpara LED Mágica - imagen 1" />
+    <img src="lampara2.jpg" alt="Lámpara LED Mágica - imagen 2" />
+    <img src="lampara3.jpg" alt="Lámpara LED Mágica - imagen 3" />
+    <img src="lampara4.jpg" alt="Lámpara LED Mágica - imagen 4" />
+    <img src="lampara5.jpg" alt="Lámpara LED Mágica - imagen 5" />
+    <img src="lampara6.jpg" alt="Lámpara LED Mágica - imagen 6" />
+    <img src="lampara7.jpg" alt="Lámpara LED Mágica - imagen 7" />
   </div>
+  <div style="text-align:center; margin-top:10px;">
+    <button class="anterior">Anterior</button>
+      <button class="siguiente">Siguiente</button>
+  </div>
+</div>
+  <h2>🌈 Lámpara LED Mágica</h2>
+  <p>
+    💡 Ilumina tu espacio con estilo y personalidad.<br><br>
+    ✔️ 8 efectos de color<br>✔️ Recargable por USB<br>✔️ Diseño moderno<br><br>
+    📦 Envío gratuito<br>💰 Satisfacción garantizada
+  </p>
+     <div class="stars" data-rating="4">★★★★☆</div>
+<div class="stock" data-stock="6"><span class="stock-text"></span></div>
 
+  <a class="buy-button" href="https://payhip.com/b/q0Pw1" target="_blank">Comprar por 29,99€</a>
+  </div>
+</div>
   <section id="testimonials-section">
     <h2>Opiniones de nuestros clientes</h2>
     <div id="testimonial-list"></div>
@@ -292,13 +486,14 @@
 <footer>
   <p>© 2025 Tienda Online. Todos los derechos reservados.</p>
   <div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/SSL_icon.svg/32px-SSL_icon.svg.png" alt="SSL Seguro" title="Conexión segura" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Verified_Badge.svg/32px-Verified_Badge.svg.png" alt="Verificado" title="Pago verificado" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Check_mark_23x20_02.svg/32px-Check_mark_23x20_02.svg.png" alt="Satisfacción Garantizada" title="Satisfacción garantizada" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" title="Pagos con PayPal" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" title="Pagos con Visa" />
+    <img src="https://img.icons8.com/fluency/32/ssl-certificate.png" alt="SSL Seguro" title="Conexión segura" />
+    <img src="https://img.icons8.com/color/32/verified-account.png" alt="Verificado" title="Pago verificado" />
+    <img src="https://img.icons8.com/fluency/32/checked.png" alt="Satisfacción Garantizada" title="Satisfacción garantizada" />
+    <img src="https://img.icons8.com/fluency/32/paypal.png" alt="PayPal" title="Pagos con PayPal" />
+    <img src="https://img.icons8.com/color/32/visa.png" alt="Visa" title="Pagos con Visa" />
   </div>
 </footer>
+
 
 <!-- Botón y caja de chat -->
 <button id="chat-toggle" title="Abrir chat">💬</button>
@@ -384,6 +579,227 @@
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 </script>
+<script>
+  // Carrusel
+  const carruselImagenes = document.getElementById('carrusel-imagenes');
+  const totalImagenes = 8;
+  let posicion = 0;
+
+  function mostrarImagen(pos) {
+    // El desplazamiento es % según la imagen (cada imagen 12.5% ancho)
+    carruselImagenes.style.transform = `translateX(-${pos * 12.5}%)`;
+  }
+
+  document.getElementById('siguiente').addEventListener('click', () => {
+    posicion = (posicion + 1) % totalImagenes;
+    mostrarImagen(posicion);
+  });
+
+  document.getElementById('anterior').addEventListener('click', () => {
+    posicion = (posicion - 1 + totalImagenes) % totalImagenes;
+    mostrarImagen(posicion);
+  });
+
+  // Avance automático cada 5 segundos
+  setInterval(() => {
+    posicion = (posicion + 1) % totalImagenes;
+    mostrarImagen(posicion);
+  }, 5000);
+
+  // Chat simple
+  const chatMessages = document.getElementById('chat-messages');
+  const inputMensaje = document.getElementById('mensaje');
+  const btnEnviar = document.getElementById('enviar');
+
+  function escapeHTML(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  function appendMessage(who, text) {
+    const msgDiv = document.createElement('div');
+    msgDiv.innerHTML = `<strong>${escapeHTML(who)}:</strong> ${escapeHTML(text)}`;
+    chatMessages.appendChild(msgDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  btnEnviar.addEventListener('click', () => {
+    const texto = inputMensaje.value.trim();
+    if (texto === '') return;
+    appendMessage('Tú', texto);
+    inputMensaje.value = '';
+
+    // Respuesta automática ejemplo (puedes cambiarla)
+    setTimeout(() => {
+      appendMessage('Echo', 'Gracias por tu mensaje. En breve te responderemos.');
+    }, 1000);
+  });
+
+  // Enviar mensaje con tecla Enter
+  inputMensaje.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      btnEnviar.click();
+      e.preventDefault();
+    }
+  });
+</script>
+ <script>
+  let indice = 0;
+  const carrusel = document.getElementById('carrusel-imagenes');
+  const total = 8; // número total de imágenes
+  const ancho = 300;
+
+  document.getElementById('anterior').addEventListener('click', () => {
+    indice = (indice - 1 + total) % total;
+    carrusel.style.transform = `translateX(-${ancho * indice}px)`;
+  });
+
+  document.getElementById('siguiente').addEventListener('click', () => {
+    indice = (indice + 1) % total;
+    carrusel.style.transform = `translateX(-${ancho * indice}px)`;
+  });
+
+  // Carrusel automático
+  setInterval(() => {
+    indice = (indice + 1) % total;
+    carrusel.style.transform = `translateX(-${ancho * indice}px)`;
+  }, 5000);
+</script>
+ <script>
+  let indice = 0;
+  const total = 8; // número de imágenes
+  const carrusel = document.getElementById('carrusel-imagenes');
+
+  function actualizarCarrusel() {
+    carrusel.style.transform = `translateX(-${indice * 300}px)`;
+  }
+
+  document.getElementById('anterior').addEventListener('click', () => {
+    indice = (indice - 1 + total) % total;
+    actualizarCarrusel();
+  });
+
+  document.getElementById('siguiente').addEventListener('click', () => {
+    indice = (indice + 1) % total;
+    actualizarCarrusel();
+  });
+
+  // Avance automático cada 5 segundos
+  setInterval(() => {
+    indice = (indice + 1) % total;
+    actualizarCarrusel();
+  }, 5000);
+</script>
+ <script>
+  let index = 0;
+  const total = 8;
+  const carrusel = document.getElementById("carrusel-imagenes");
+
+  function actualizarCarrusel() {
+    carrusel.style.transform = `translateX(-${index * 300}px)`;
+  }
+
+  document.getElementById("anterior").addEventListener("click", () => {
+    index = (index - 1 + total) % total;
+    actualizarCarrusel();
+  });
+
+  document.getElementById("siguiente").addEventListener("click", () => {
+    index = (index + 1) % total;
+    actualizarCarrusel();
+  });
+
+  // Auto avance cada 5 segundos
+  setInterval(() => {
+    index = (index + 1) % total;
+    actualizarCarrusel();
+  }, 5000);
+</script>
+ <script>
+  document.querySelectorAll('[data-carrusel]').forEach(carrusel => {
+    const imagenes = carrusel.querySelector('.carrusel-imagenes');
+    const btnAnterior = carrusel.querySelector('.anterior');
+    const btnSiguiente = carrusel.querySelector('.siguiente');
+    const total = imagenes.children.length;
+    let indice = 0;
+
+    btnAnterior.addEventListener('click', () => {
+      indice = (indice - 1 + total) % total;
+      actualizarCarrusel();
+    });
+
+    btnSiguiente.addEventListener('click', () => {
+      indice = (indice + 1) % total;
+      actualizarCarrusel();
+    });
+
+    function actualizarCarrusel() {
+      imagenes.style.transform = `translateX(-${indice * 300}px)`;
+    }
+
+    // Carrusel automático (opcional)
+    setInterval(() => {
+      indice = (indice + 1) % total;
+      actualizarCarrusel();
+    }, 5000);
+  });
+</script>
+ <script>
+  document.querySelectorAll('.carrusel').forEach(carrusel => {
+    const imagenes = carrusel.querySelector('.carrusel-imagenes');
+    const total = imagenes.querySelectorAll('img').length;
+    let index = 0;
+
+    const actualizarCarrusel = () => {
+      imagenes.style.transform = `translateX(-${index * 300}px)`;
+    };
+
+    carrusel.querySelector('.anterior').addEventListener('click', () => {
+      index = (index - 1 + total) % total;
+      actualizarCarrusel();
+    });
+
+    carrusel.querySelector('.siguiente').addEventListener('click', () => {
+      index = (index + 1) % total;
+      actualizarCarrusel();
+    });
+
+    // Opcional: auto-avance cada 5 segundos
+    setInterval(() => {
+      index = (index + 1) % total;
+      actualizarCarrusel();
+    }, 5000);
+  });
+</script>
+<script>
+  // Sistema de estrellas (puntuación)
+  document.querySelectorAll('.stars').forEach(starEl => {
+    const rating = parseInt(starEl.dataset.rating, 10);
+    let starsHTML = '';
+    for (let i = 1; i <= 5; i++) {
+      starsHTML += i <= rating ? '★' : '☆';
+    }
+    starEl.textContent = starsHTML;
+  });
+
+  // Stock dinámico
+  document.querySelectorAll('.stock').forEach(stockEl => {
+    const stock = parseInt(stockEl.dataset.stock, 10);
+    const textEl = stockEl.querySelector('.stock-text');
+    if (stock <= 3 && stock > 0) {
+      stockEl.classList.add('low');
+      textEl.textContent = `¡Solo quedan ${stock} en stock!`;
+    } else if (stock > 3) {
+      textEl.textContent = `En stock: ${stock}`;
+    } else {
+      textEl.textContent = 'Agotado';
+      stockEl.classList.add('low');
+    }
+  });
+</script>
+
+
 
 </body>
 </html>
